@@ -1,31 +1,11 @@
-# 🖼️ Remove Background API (Rembg + FastAPI)
+# 🖼️ Remover Fundo API (Koyeb)
 
-API simples que usa `rembg` para remover o fundo de imagens.
+API simples baseada em FastAPI e `rembg` para remover fundos de imagens.
 
 ## 🚀 Deploy no Koyeb
-
-1. Crie um novo repositório no GitHub e envie estes arquivos.
-2. No [Koyeb](https://www.koyeb.com), clique em **Create App**.
-3. Escolha **GitHub → selecione este repositório**.
-4. Deploy automático (sem precisar configurar nada).
-5. Após o deploy, sua API estará disponível em um link do tipo:
-
-   ```
-   https://seuapp.koyeb.app/remove-bg
-   ```
-
-## 📦 Endpoints
-
-- **POST /remove-bg**
-  - Envie uma imagem (campo `file`).
-  - Retorna a imagem com o fundo removido (PNG).
-
-## 🧠 Exemplo de uso (Python)
-
-```python
-import requests
-
-with open("foto.jpg", "rb") as f:
-    resp = requests.post("https://seuapp.koyeb.app/remove-bg", files={"file": f})
-    open("foto_sem_fundo.png", "wb").write(resp.content)
-```
+1. Suba este código para um repositório GitHub.
+2. No Koyeb, crie um novo serviço e selecione este repositório.
+3. Escolha **Dockerfile** como tipo de build.
+4. Após o deploy, acesse a URL pública para testar:
+   - `GET /` → retorna status da API
+   - `POST /remove-bg` → envia uma imagem para remover o fundo.
